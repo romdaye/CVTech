@@ -1,0 +1,18 @@
+<p [hidden]="isHidden" [style.color]="color">first works!</p>
+<app-second></app-second>
+
+<p (mouseover)="afficherCacher()">Bonjour {{ firstname }} {{ name }}</p>
+
+<button (click)="changeColor()"
+class="btn btn-primary">
+  changer la couleur
+</button>
+
+<input
+  #textInput
+  type="text"
+  class="form-control"
+  (change)="changeMessage(textInput.value)"
+/>
+
+LE contenu de l'input est {{ message }}

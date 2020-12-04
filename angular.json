@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "orsys4122020"
+    }
+  },
+  "defaultProject": "orsys4122020",
+  "cli": {
+    "analytics": false
+  }
 }

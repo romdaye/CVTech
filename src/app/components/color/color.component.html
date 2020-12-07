@@ -1,15 +1,16 @@
 <p>color works!</p>
 
 <div id="bonjour" [style.backgroundColor]="color">Bonjour</div>
-
+<p>Ma couleur est {{ color }}</p>
 <div class="row">
+  <input
+    (change)="changeColor(colorInput.value)"
+    #colorInput
+    type="text"
+    class="form-control"
+  />
   <div class="col-1">
-    <input
-      (change)="changeColor(colorInput.value)"
-      #colorInput
-      type="color"
-      class="form-control"
-    />
+    <input [(ngModel)]="color" type="color" class="form-control" />
   </div>
 </div>
 

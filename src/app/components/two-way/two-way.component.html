@@ -1,0 +1,14 @@
+<p>two-way works!</p>
+
+<input
+  [(ngModel)]="two"
+  type="text" class="form-control">
+
+Le contenu de la variable two est : {{two}}
+
+<button
+  (click)="changeTwoValue()"
+  class="btn btn-danger"
+>
+  reset
+</button>

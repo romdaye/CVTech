@@ -7,3 +7,7 @@
   color: white;
   background-color: skyblue;
 }
+
+input {
+  border: yellow 4px solid;
+}

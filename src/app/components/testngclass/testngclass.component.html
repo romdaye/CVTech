@@ -7,8 +7,9 @@
   testngclass works!
 </p>
 
-<button
-  (click)="changeClass()"
-  class="btn-primary">
-  change class
-</button>
+<button (click)="changeClass()" class="btn-primary">change class</button>
+
+<div appHighlight >test directive</div>
+<div [in]="'green'" [out]="'orange'" appHighlight>test directive</div>
+
+<input type="text" appRainbow>

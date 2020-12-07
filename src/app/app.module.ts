@@ -19,6 +19,9 @@ import { CardComponent } from './cv/card/card.component';
 import { TestngstyleComponent } from './directives/testngstyle/testngstyle.component';
 import { WordComponent } from './pages/word/word.component';
 import { TestngclassComponent } from './components/testngclass/testngclass.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
+import { NgiftestComponent } from './directives/ngiftest/ngiftest.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { TestngclassComponent } from './components/testngclass/testngclass.compo
     CardComponent,
     TestngstyleComponent,
     WordComponent,
-    TestngclassComponent
+    TestngclassComponent,
+    HighlightDirective,
+    RainbowDirective,
+    NgiftestComponent
   ],
   imports: [
     BrowserModule,

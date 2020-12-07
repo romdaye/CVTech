@@ -10,5 +10,7 @@ export class CardComponent implements OnInit {
   @Input() personne: Personne = new Personne();
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('in card', this.personne);
+  }
 }

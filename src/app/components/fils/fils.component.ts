@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-fils',
@@ -10,8 +10,20 @@ export class FilsComponent implements OnInit {
   @Input() name = 'fils';
   @Input() bgc = 'red';
 
-  //fils (message = 'message du fils', name= 'name', bgc='red');
+  /*
+    1- Créer un evenement
+    2- Dire quand déclencher l'evenement
+    3- Emettre l'evenement et je vais y cacher les datas à envoyer au pere
+  */
+  @Output() messageFromFils = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  envoyerInfosAuPere() {
+    this.messageFromFils.emit(
+      'cc Papa c est ton fils'
+    );
+  }
 }

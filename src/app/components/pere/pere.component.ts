@@ -11,4 +11,7 @@ export class PereComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  recupererMessageDeMonFils(msgFils: string) {
+    alert(msgFils);
+  }
 }

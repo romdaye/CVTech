@@ -1,0 +1,14 @@
+<p
+  [ngClass]="{
+    class1: show,
+    class2: !show
+  }"
+>
+  testngclass works!
+</p>
+
+<button
+  (click)="changeClass()"
+  class="btn-primary">
+  change class
+</button>

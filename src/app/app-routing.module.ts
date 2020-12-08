@@ -7,10 +7,11 @@ import { WordComponent } from './pages/word/word.component';
 import { TodoComponent } from './todo/todo.component';
 import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique.component';
 
+// todo
 const routes: Routes = [
   { path: 'cv', component: CvComponent },
   { path: 'todo', component: TodoComponent },
-  { path: 'color', component: ColorComponent },
+  { path: 'color/:couleur', component: ColorComponent },
   { path: 'word', component: WordComponent },
   { path: '', component: ChiffreMagiqueComponent },
 ];

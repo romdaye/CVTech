@@ -27,6 +27,8 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { TodoComponent } from './todo/todo.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique.component';
+import { RouterSimulatorComponent } from './components/router-simulator/router-simulator.component';
+import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique
     DefaultImagePipe,
     TodoComponent,
     HeaderComponent,
-    ChiffreMagiqueComponent
+    ChiffreMagiqueComponent,
+    RouterSimulatorComponent,
+    DetailPersonneComponent
   ],
   imports: [
     BrowserModule,

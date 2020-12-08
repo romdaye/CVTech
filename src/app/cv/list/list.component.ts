@@ -12,33 +12,17 @@ export class ListComponent implements OnInit {
   @Output() forwardSelectedPersonne = new EventEmitter();
   ngOnInit(): void {
     this.personnes = [
-      new Personne(
-        1,
-        'sellaouti',
-        'aymen',
-        'teacher',
-        'rotating_card_profile2.png',
-        38,
-        45879
-      ),
+      new Personne(1, 'sellaouti', 'aymen', 'teacher', 'as.jpg', 38, 45879),
       new Personne(
         2,
         'Crammard',
         'Carolyn',
         'Developper',
-        'rotating_card_profile.png',
+        '        ',
         20,
         125435
       ),
-      new Personne(
-        3,
-        'Molinier',
-        'Christophe',
-        'Developper',
-        'rotating_card_profile3.png',
-        20,
-        548752
-      ),
+      new Personne(3, 'Molinier', 'Christophe', 'Developper', '', 20, 548752),
     ];
   }
 

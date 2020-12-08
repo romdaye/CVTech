@@ -22,6 +22,8 @@ import { TestngclassComponent } from './components/testngclass/testngclass.compo
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { NgiftestComponent } from './directives/ngiftest/ngiftest.component';
+import { MoneyConvertorPipe } from './pipes/money-convertor.pipe';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { NgiftestComponent } from './directives/ngiftest/ngiftest.component';
     TestngclassComponent,
     HighlightDirective,
     RainbowDirective,
-    NgiftestComponent
+    NgiftestComponent,
+    MoneyConvertorPipe,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,

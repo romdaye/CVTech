@@ -1,15 +1,16 @@
-<span
-  (click)="selectItem()"
->
-
+<span (click)="selectItem()">
   <img
     width="50px"
     heigth="50px"
     class="rounded-circle"
-    src="assets/images/{{ personne?.path }}"
+    src="assets/images/{{ personne?.path | defaultImage }}"
     alt="{{ personne?.name }}"
   />
 
-  {{ personne?.firstname }} {{ personne?.name }}
-
+  {{ personne?.firstname }} {{ personne?.name | uppercase | slice: 2:6 }}
 </span>
+<!-- <p>
+  1 euro en dollar est égal à {{ 1 | moneyConvertor: 0 | currency: "USD" }} 1
+  dollar en euro est égal à {{ 1 | moneyConvertor: 1 | currency: "EUR" }}
+</p>
+ -->

@@ -25,6 +25,8 @@ import { NgiftestComponent } from './directives/ngiftest/ngiftest.component';
 import { MoneyConvertorPipe } from './pipes/money-convertor.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { TodoComponent } from './todo/todo.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { TodoComponent } from './todo/todo.component';
     NgiftestComponent,
     MoneyConvertorPipe,
     DefaultImagePipe,
-    TodoComponent
+    TodoComponent,
+    HeaderComponent,
+    ChiffreMagiqueComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<p>Veuillez deviner le chiffre magique</p>
+
+<input [(ngModel)]="tentative" type="number" class="form-control" />
+
+<button (click)="play()">Jouer</button>
+
+<div class="alert alert-info">
+  {{ message }}
+</div>

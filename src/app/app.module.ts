@@ -24,6 +24,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { NgiftestComponent } from './directives/ngiftest/ngiftest.component';
 import { MoneyConvertorPipe } from './pipes/money-convertor.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     RainbowDirective,
     NgiftestComponent,
     MoneyConvertorPipe,
-    DefaultImagePipe
+    DefaultImagePipe,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

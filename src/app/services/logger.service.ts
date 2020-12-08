@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class LoggerService {
+  //todos: Todo[] = [];
   constructor() {}
   log(message: unknown): void {
-    console.log(message);
+    console.log('Ma variable est', message);
   }
 }

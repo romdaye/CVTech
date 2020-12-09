@@ -12,7 +12,15 @@ export class ListComponent implements OnInit {
   constructor(private cvService: CvService) {}
   @Output() forwardSelectedPersonne = new EventEmitter();
   ngOnInit(): void {
-    this.personnes = this.cvService.getPersonnesListe();
+    this.cvService.getPersonnesListe().subscribe(
+      (personnesDansLaBase) => {
+        this.personnes = personnesDansLaBase;
+      },
+      (erreur) => {
+        this.personnes = this.cvService.getFakePersonnesListe();
+        alert('Problème de connexion, les données fictives');
+      }
+    );
   }
 
   forwardPersonne(personne: Personne) {

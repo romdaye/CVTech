@@ -30,6 +30,8 @@ import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique
 import { RouterSimulatorComponent } from './components/router-simulator/router-simulator.component';
 import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.component';
 import { GitComponent } from './git/git.component';
+import { NF404Component } from './nf404/nf404.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { GitComponent } from './git/git.component';
     ChiffreMagiqueComponent,
     RouterSimulatorComponent,
     DetailPersonneComponent,
-    GitComponent
+    GitComponent,
+    NF404Component,
+    TestFormComponent
   ],
   imports: [
     BrowserModule,

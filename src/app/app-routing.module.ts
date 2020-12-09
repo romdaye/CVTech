@@ -9,12 +9,14 @@ import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique
 import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.component';
 import { NF404Component } from './nf404/nf404.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AddPersonneComponent } from './cv/add-personne/add-personne.component';
 
 // todo
 const routes: Routes = [
   { path: 'cv', component: CvComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cvTech', redirectTo: 'cv', pathMatch: 'full' },
+  { path: 'cv/add', component: AddPersonneComponent },
   { path: 'cv/:id', component: DetailPersonneComponent },
   { path: 'todo', component: TodoComponent },
   { path: 'color/:couleur', component: ColorComponent },

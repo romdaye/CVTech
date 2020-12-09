@@ -62,6 +62,13 @@ export class CvService {
   }
 
   addPersonne(personneToAdd: Personne): Observable<Personne> {
-    return this.http.post<Personne>(API_PERSONNE_LINK, personneToAdd);
+    // Ceci est le token qu'on a caché dans le local storage
+    const tokenRecupere = localStorage.getItem('token');
+    // Créer un header de name Authorization  et on y met le token
+    const headers = new HttpHeaders().set('Authorization', tokenRecupere);
+
+    return this.http.post<Personne>(API_PERSONNE_LINK, personneToAdd, {
+      headers,
+    });
   }
 }

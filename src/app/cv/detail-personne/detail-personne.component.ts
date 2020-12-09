@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Personne } from './../Model/personne';
 import { CvService } from './../services/cv.service';
 
@@ -13,27 +14,33 @@ export class DetailPersonneComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private cvService: CvService,
-    private router: Router
+    private router: Router,
+    private toaster: ToastrService
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (mesParametres) => {
-      this.cvService.findPersonneById(+mesParametres.id).subscribe(
-        (findedPersonne) => this.personne = findedPersonne,
-        (erreur) => this.router.navigate(['cv'])
-      );
-    },
-    (erreur) => console.log(erreur),
-    () => console.log('on a terminé')
+        this.cvService.findPersonneById(+mesParametres.id).subscribe(
+          (findedPersonne) => (this.personne = findedPersonne),
+          (erreur) => this.router.navigate(['cv'])
+        );
+      },
+      (erreur) => console.log(erreur),
+      () => console.log('on a terminé')
     );
   }
 
   deletePersonne() {
-    if (this.cvService.deletePersonne(this.personne)) {
-      this.router.navigate(['cv']);
-    } else {
-      alert('Problème de suppression');
-    }
+    this.cvService.deletePersonne(this.personne.id).subscribe(
+      (data) => {
+        this.toaster.success('Cv supprimé avec succées');
+        this.router.navigate(['cv']);
+      },
+      (erreur) => {
+        this.toaster.error('Problème de suppression');
+        console.log(erreur);
+      }
+    );
   }
 }

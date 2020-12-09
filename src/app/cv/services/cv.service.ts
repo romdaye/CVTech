@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Personne } from './../Model/personne';
@@ -42,7 +42,7 @@ export class CvService {
     return this.http.get<Personne>(API_PERSONNE_LINK + id);
   }
 
-  deletePersonne(deletedPersonne: Personne): number {
+  deleteFakePersonne(deletedPersonne: Personne): number {
     const index = this.personnes.indexOf(deletedPersonne);
     if (index === -1) {
       return 0;
@@ -50,5 +50,18 @@ export class CvService {
       this.personnes.splice(index, 1);
       return 1;
     }
+  }
+
+  deletePersonne(id): Observable<unknown> {
+    // Ceci est le token qu'on a caché dans le local storage
+    const tokenRecupere = localStorage.getItem('token');
+    // Créer un header de name Authorization  et on y met le token
+    const headers = new HttpHeaders().set('Authorization', tokenRecupere);
+    //On envoi la requete avec le header qu'on vient de créer
+    return this.http.delete<unknown>(API_PERSONNE_LINK + id, { headers });
+  }
+
+  addPersonne(personneToAdd: Personne): Observable<Personne> {
+    return this.http.post<Personne>(API_PERSONNE_LINK, personneToAdd);
   }
 }

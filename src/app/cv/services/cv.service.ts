@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Personne } from './../Model/personne';
 
 const API_PERSONNE_LINK =
-  'https://immense-citadel-91115.herokuapp.com/api/personnes';
+  'https://immense-citadel-91115.herokuapp.com/api/personnes/';
 
 @Injectable({
   providedIn: 'root',

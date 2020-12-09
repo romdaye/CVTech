@@ -32,6 +32,7 @@ import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.co
 import { GitComponent } from './git/git.component';
 import { NF404Component } from './nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { TestFormComponent } from './components/test-form/test-form.component';
     DetailPersonneComponent,
     GitComponent,
     NF404Component,
-    TestFormComponent
+    TestFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

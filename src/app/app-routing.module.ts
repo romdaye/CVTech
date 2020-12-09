@@ -8,11 +8,13 @@ import { TodoComponent } from './todo/todo.component';
 import { ChiffreMagiqueComponent } from './pages/chiffre-magique/chiffre-magique.component';
 import { DetailPersonneComponent } from './cv/detail-personne/detail-personne.component';
 import { NF404Component } from './nf404/nf404.component';
+import { LoginComponent } from './pages/login/login.component';
 
 // todo
 const routes: Routes = [
   { path: 'cv', component: CvComponent },
-  { path: 'cvTech', redirectTo: 'cv', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  { path: 'cvTech', redirectTo: 'cv', pathMatch: 'full' },
   { path: 'cv/:id', component: DetailPersonneComponent },
   { path: 'todo', component: TodoComponent },
   { path: 'color/:couleur', component: ColorComponent },

@@ -17,7 +17,8 @@ export class DetailPersonneComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((mesParametres) => {
+    this.activatedRoute.params.subscribe(
+      (mesParametres) => {
       const findedPersonne = this.cvService.findPersonneById(+mesParametres.id);
       if (!findedPersonne) {
         console.log('personne innexistate');
@@ -25,7 +26,10 @@ export class DetailPersonneComponent implements OnInit {
       } else {
         this.personne = findedPersonne;
       }
-    });
+    },
+    (erreur) => console.log(erreur),
+    () => console.log('on a terminé')
+    );
   }
 
   deletePersonne() {

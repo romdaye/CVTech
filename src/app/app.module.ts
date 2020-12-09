@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +36,8 @@ import { GitComponent } from './git/git.component';
 import { NF404Component } from './nf404/nf404.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
 import { LoginComponent } from './pages/login/login.component';
-
+import { ObservableTestComponent } from './components/observable-test/observable-test.component';
+import { HttpTestComponent } from './components/http-test/http-test.component';
 
 @NgModule({
   declarations: [
@@ -66,14 +70,19 @@ import { LoginComponent } from './pages/login/login.component';
     GitComponent,
     NF404Component,
     TestFormComponent,
-    LoginComponent
+    LoginComponent,
+    ObservableTestComponent,
+    HttpTestComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

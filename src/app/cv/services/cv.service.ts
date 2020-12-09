@@ -34,8 +34,12 @@ export class CvService {
     return this.http.get<Personne[]>(API_PERSONNE_LINK);
   }
 
-  findPersonneById(id: number): Personne {
+  findFakePersonneById(id: number): Personne {
     return this.personnes.find((personne) => personne.id === id);
+  }
+
+  findPersonneById(id: number): Observable<Personne> {
+    return this.http.get<Personne>(API_PERSONNE_LINK + id);
   }
 
   deletePersonne(deletedPersonne: Personne): number {

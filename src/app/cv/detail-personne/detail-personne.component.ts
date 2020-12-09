@@ -19,13 +19,10 @@ export class DetailPersonneComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (mesParametres) => {
-      const findedPersonne = this.cvService.findPersonneById(+mesParametres.id);
-      if (!findedPersonne) {
-        console.log('personne innexistate');
-        this.router.navigate(['cv']);
-      } else {
-        this.personne = findedPersonne;
-      }
+      this.cvService.findPersonneById(+mesParametres.id).subscribe(
+        (findedPersonne) => this.personne = findedPersonne,
+        (erreur) => this.router.navigate(['cv'])
+      );
     },
     (erreur) => console.log(erreur),
     () => console.log('on a terminé')
